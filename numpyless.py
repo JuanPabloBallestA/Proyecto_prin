@@ -242,7 +242,10 @@ def norm(v: Vector) -> float:
 
     Pista: Usa dot(v, v) y luego sqrt() del módulo math
     """
-    raise NotImplementedError("Función no implementada.")
+    if len(v) == 0:
+        return 0.0
+    norma=dot(v,v)
+    return float(sqrt(norma))
 
 
 # -------------------------------------------------------------------
