@@ -170,7 +170,12 @@ def dot(v: Vector, w: Vector) -> float:
 
     Pista: Usa sum() y zip()
     """
-    raise NotImplementedError("Función no implementada.")
+    v=Vector
+    w=Vector
+    if len(v) != len(w):
+        raise ValueError("Los vectores deben tener la misma dimensión.")
+    producto_punto = sum(a * b for a, b in zip(v, w))
+    return float(producto_punto)
 
 
 def add(v: Vector, w: Vector) -> Vector:
