@@ -114,7 +114,10 @@ def shape(A: Matriz) -> tuple[int, int]:
 
     Pista: len(A) da filas, len(A[0]) da columnas
     """
-    raise NotImplementedError("Función no implementada.")
+    matriz=A
+    filas=len(matriz)
+    columnas=len(matriz[0]) if filas > 0 else 0
+    return (filas, columnas)
 
 
 def transpose(A: Matriz) -> Matriz:
