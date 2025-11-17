@@ -1,6 +1,10 @@
 """
 ╔════════════════════════════════════════════════════════════════════════╗
+<<<<<<< HEAD
 ║                            📐 NumpyLess                              ║
+=======
+║                            NumpyLess                                ║
+>>>>>>> ebafc5c6f1cdde99ca2ff89c281aff1d09a54903
 ║                  Pure Python Linear Algebra Library                    ║
 ║                      (NumPy-less, stress-more!)                        ║
 ╚════════════════════════════════════════════════════════════════════════╝
@@ -46,7 +50,8 @@ def zeros(shape: tuple[int, int]) -> Matriz:
 
     Pista: Usa listas por comprensión anidadas
     """
-    raise NotImplementedError("Función no implementada.")
+    filas, columnas = shape
+    return [[0.0 for _ in range(columnas)] for _ in range(filas)]
 
 
 def ones(shape: tuple[int, int]) -> Matriz:
@@ -113,7 +118,10 @@ def shape(A: Matriz) -> tuple[int, int]:
 
     Pista: len(A) da filas, len(A[0]) da columnas
     """
-    raise NotImplementedError("Función no implementada.")
+    matriz=A
+    filas=len(matriz)
+    columnas=len(matriz[0]) if filas > 0 else 0
+    return (filas, columnas)
 
 
 def transpose(A: Matriz) -> Matriz:
@@ -166,7 +174,12 @@ def dot(v: Vector, w: Vector) -> float:
 
     Pista: Usa sum() y zip()
     """
-    raise NotImplementedError("Función no implementada.")
+    v=Vector
+    w=Vector
+    if len(v) != len(w):
+        raise ValueError("Los vectores deben tener la misma dimensión.")
+    producto_punto = sum(a * b for a, b in zip(v, w))
+    return float(producto_punto)
 
 
 def add(v: Vector, w: Vector) -> Vector:
@@ -233,7 +246,10 @@ def norm(v: Vector) -> float:
 
     Pista: Usa dot(v, v) y luego sqrt() del módulo math
     """
-    raise NotImplementedError("Función no implementada.")
+    if len(v) == 0:
+        return 0.0
+    norma=dot(v,v)
+    return float(sqrt(norma))
 
 
 # -------------------------------------------------------------------
