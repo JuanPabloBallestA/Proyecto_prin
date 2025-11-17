@@ -23,6 +23,7 @@ Tipos de Datos:
 # --- Alias de Tipos Nativos ---
 Vector = list[float]
 Matriz = list[list[float]]
+import math
 
 # -------------------------------------------------------------------
 # Sección 1: Creación de Arrays (⭐ Básico)
@@ -114,9 +115,9 @@ def shape(A: Matriz) -> tuple[int, int]:
 
     Pista: len(A) da filas, len(A[0]) da columnas
     """
-    matriz=A
-    filas=len(matriz)
-    columnas=len(matriz[0]) if filas > 0 else 0
+    matriz = A
+    filas = len(matriz)
+    columnas = len(matriz[0]) if filas > 0 else 0
     return (filas, columnas)
 
 
@@ -170,8 +171,8 @@ def dot(v: Vector, w: Vector) -> float:
 
     Pista: Usa sum() y zip()
     """
-    v=Vector
-    w=Vector
+    v = Vector
+    w = Vector
     if len(v) != len(w):
         raise ValueError("Los vectores deben tener la misma dimensión.")
     producto_punto = sum(a * b for a, b in zip(v, w))
@@ -244,8 +245,8 @@ def norm(v: Vector) -> float:
     """
     if len(v) == 0:
         return 0.0
-    norma=dot(v,v)
-    return float(sqrt(norma))
+    norma = dot(v, v)
+    return float(math.sqrt(norma))
 
 
 # -------------------------------------------------------------------
