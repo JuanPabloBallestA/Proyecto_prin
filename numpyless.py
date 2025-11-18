@@ -20,10 +20,11 @@ Tipos de Datos:
 - Matriz: list[list[float]] - Un array 2D de flotantes (filas x columnas)
 """
 
+import math
+
 # --- Alias de Tipos Nativos ---
 Vector = list[float]
 Matriz = list[list[float]]
-
 # -------------------------------------------------------------------
 # Sección 1: Creación de Arrays (⭐ Básico)
 # -------------------------------------------------------------------
@@ -245,7 +246,7 @@ def norm(v: Vector) -> float:
     if len(v) == 0:
         return 0.0
     norma=dot(v,v)
-    return float(sqrt(norma))
+    return float(math.sqrt(norma))
 
 
 # -------------------------------------------------------------------
