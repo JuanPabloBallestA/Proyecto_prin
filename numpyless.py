@@ -276,7 +276,18 @@ def add_matrices(A: Matriz, B: Matriz) -> Matriz:
 
     Pista: Suma elemento a elemento, fila por fila
     """
-    raise NotImplementedError("Función no implementada.")
+    A=Matriz
+    B=Matriz
+    if shape(A) != shape(B):
+        raise ValueError("Las matrices deben tener la misma forma.")
+    filas, columnas = shape(A)
+    resultado = []
+    for i in range(filas):
+        fila_resultado = []
+        for j in range(columnas):
+            fila_resultado.append(A[i][j] + B[i][j])
+        resultado.append(fila_resultado)
+    return resultado
 
 
 def multiply_matrix(c: float, A: Matriz) -> Matriz:
