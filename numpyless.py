@@ -381,4 +381,4 @@ def det(A: Matriz) -> float:
     - Caso 2×2: usa la fórmula directa
     - Caso 3×3+: expansión por primera fila (recursivo)
     """
-    raise NotImplementedError("Función no implementada.")
+    
