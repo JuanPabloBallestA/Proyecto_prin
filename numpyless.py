@@ -381,4 +381,20 @@ def det(A: Matriz) -> float:
     - Caso 2×2: usa la fórmula directa
     - Caso 3×3+: expansión por primera fila (recursivo)
     """
-    
+    determinante=float
+    n=len(A)
+    if n == 0:
+        raise ValueError("La matriz debe ser cuadrada.")
+    for i in range(n):
+        if len(A[i]) != n:
+            raise ValueError("La matriz debe ser cuadrada.")
+    if n == 1:
+        return float(A[0][0])
+    if n == 2:
+        return float(A[0][0] * A[1][1] - A[0][1] * A[1][0])
+    determinante = 0.0
+    for j in range(n):
+        menor = [[A[i][k] for k in range(n) if k != j] for i in range(1, n)]
+        signo = (-1) ** j
+        determinante += signo * A[0][j] * det(menor)
+    return determinante
